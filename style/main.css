@@ -1,0 +1,391 @@
+:root {
+    --darkblue: #363f5f;
+    --green: #49aa26;
+    --lightgreen: #3dd705;
+    --red: #e92929;
+}
+
+html {
+    font-size: 93.75%; /* 15px */
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+body {
+    background: #f0f2f5;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.container {
+    border: 0px solid black;
+    width: min(90vw, 800px);
+    margin: auto;
+}
+
+/* ===== HEADER ===== */
+
+header {
+    background: #333;
+    padding: 2rem 0 10rem;
+}
+
+.headerbox {
+    border: 0px solid white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    width: min(90vw, 800px);
+}
+
+.logobox {
+    margin-left: 10px;
+    border: 0px solid white;
+}
+
+.flags {
+    display: flex;
+    width: auto;
+    border: 0px solid white;
+    cursor: pointer;
+}
+
+header #israel, 
+header #brazil {
+    height: 50px;
+    overflow: hidden;
+    margin-right: 10px;
+    border-radius: 50%;
+    opacity: 0.6;
+    transition: 0.4s ease all;
+}
+
+.flags #israel:hover, #brazil:hover {
+    border: 0px solid white;
+    opacity: 1;
+}
+
+header p {
+    color: lightgray;
+}
+
+h2 {
+    margin-top: 3.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--darkblue);
+    font-weight: normal;
+}
+
+#logo {
+    color: #fff;
+}
+
+/* ===== BALANCE ===== */
+
+#balance {
+    margin-top: -8rem;
+}
+
+#balance h2 {
+    color: white;
+    margin-top: 0;
+}
+
+/* ===== CARDS ===== */
+
+
+.card {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 0.25rem;
+
+    margin-bottom: 2rem;
+    color: var(--darkblue);
+    transition: .4s;
+}
+
+.card h3 {
+    font-weight: normal;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card p {
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-top: 1rem;
+}
+
+.card.total {
+    background: var(--green);
+    color: white;
+}
+
+
+/* ===== TABLE ===== */
+
+
+#transactions {
+    width: 100%;
+    display: block;
+    overflow-x:auto;
+}
+
+#data-table {
+    width: 100%;
+    border-spacing: 0 0.5rem;
+    color: #969cb3;
+}
+
+table thead tr th:first-child,
+table tbody tr td:first-child {
+    border-radius: 0.5rem 0 0 0.5rem;
+    
+}
+
+table thead tr th:last-child,
+table tbody tr td:last-child {
+    border-radius: 0 0.5rem 0.5rem 0;
+    
+}
+
+
+table th {
+    opacity: 1;
+    background: white;
+    color: var(--darkblue);
+    font-weight: normal;
+    padding: 1rem 2rem;
+    text-align: left;
+}
+
+table tbody tr {
+    opacity: 0.6;
+}
+
+table tbody tr:hover{
+    opacity: 1;
+}
+
+table td {
+    background: white;
+    padding: 1rem 2rem;
+
+}
+
+td.description {
+    color: var(--darkblue);
+}
+
+td.income {
+    color: #12a454;
+}
+
+td.expense {
+    color: var(--red);
+}
+
+/* ===== LINKS AND BUTTONS ===== */
+
+a {
+    color: var(--green);
+    text-decoration: none;
+    transition: 0.4s;
+    box-sizing: border-box;
+}
+
+a:hover {
+    color: var(--lightgreen);
+}
+
+.button.new {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+}
+
+button {
+    font-size: 100%;
+    font-family: inherit;
+    padding: inherit;
+    border: 0;
+    color: white;
+    background-color: var(--green);
+    border-radius: 0.25rem;
+
+    transition: 0.4s ease all;
+}
+
+button:hover {
+    background-color: var(--lightgreen);
+}
+
+.button.cancel {
+    color: var(--red);
+    border: 2px solid var(--red);
+    border-radius: 0.25rem;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0.6;
+}
+
+.button.cancel:hover {
+    opacity: 1;
+}
+
+.input-group.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button {
+    outline-style: none;
+    margin-top: 0.8rem;
+    padding: 0.8rem;
+    width: 48%;
+}
+
+.input-group.actions button {
+    height: 50px;
+}
+
+/* ===== FORM ===== */
+
+#form {
+    width: 100%;
+}
+
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background-color: #f0f2f5;
+    padding: 2.4rem;
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+#form h2 {
+    margin-top: 0;
+}
+
+input {
+    border: none;
+    border-radius: 0.2rem;
+
+    padding: .8rem;
+    width: 100%;
+}
+
+.input-group {
+    margin-top: 0.8rem;
+}
+
+.input-group input {
+    outline-color: #555;
+}
+
+.input-group small {
+    opacity: 0.6;
+}
+
+.error-strip {
+    display: flex;
+    position: fixed;
+    top: 0;
+    background-color: #eb5555;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #f2f2f2;
+    padding: 8px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s ease all;
+    z-index: 12;
+}
+
+.error-strip p {
+    margin: 0 20px;
+}
+
+.error-strip img {
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 50%;
+    height: 28px;
+}
+
+.error-strip.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    text-align: center;
+    padding: 4rem 0 2rem;
+    color: var(--darkblue);
+    opacity: 0.6;
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media (min-width: 760px) {
+    html {
+        font-size: 87.5%;
+    }
+    #balance {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        column-gap: 2rem;
+    }
+}
